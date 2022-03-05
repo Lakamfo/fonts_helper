@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/info_panel.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.027451, 0.027451, 0.027451, 0.27451 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.188235, 0.172549, 0.172549, 1 )
+border_color = Color( 0, 1, 0.94902, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 1, 0.996078, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+border_color = Color( 0, 1, 0.996078, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Panel" type="Panel" groups=["panel"]]
+anchor_right = 0.655425
+anchor_bottom = 0.1
+margin_right = 3.05176e-05
+margin_bottom = -1.90735e-06
+rect_min_size = Vector2( 447, 40 )
+rect_pivot_offset = Vector2( -281, -120 )
+focus_neighbour_right = NodePath("Button")
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -218.5
+margin_top = -20.0
+margin_right = 218.5
+margin_bottom = 20.0
+focus_neighbour_right = NodePath("../Button")
+custom_styles/normal = SubResource( 2 )
+align = 1
+placeholder_text = "Name"
+caret_blink = true
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -15.0
+margin_right = 45.0
+margin_bottom = 15.0
+text = "1"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -43.0
+margin_top = -13.0
+margin_right = -16.0
+margin_bottom = 13.0
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+text = "-"
+
+[connection signal="pressed" from="Button" to="." method="bt_pressed"]
