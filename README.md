@@ -9,7 +9,7 @@
 <p align="center">  P.S. Tested and wroten on windows, may be unstable on linux
   
 # <p align="center"> Features
-<p align="center"> • Fonts preview
+<p align="center"> • Fonts preview (ttf,otf)
 <p align="center"> • Export and duplicate font files with the specified names 
 <p align="center"> • UI localisation
 <p align="center"> • Save and using export presets
