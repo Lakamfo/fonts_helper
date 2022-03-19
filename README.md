@@ -1,6 +1,5 @@
-# <p align="center"> Fonts Helper
 <p align="center">
-   <img src="images/logo_512x.png" alt="Fonts Helper logo">
+   <img src="images/white_logo.png" alt="Fonts Helper logo">
 </p>
 
 # <p align="center">How to build?
