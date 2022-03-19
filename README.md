@@ -1,6 +1,5 @@
-# <p align="center"> Fonts Helper
 <p align="center">
-   <img src="images/logo_512x.png" alt="Fonts Helper logo">
+   <img src="images/white_logo.png" alt="Fonts Helper logo">
 </p>
 
 # <p align="center">How to build?
@@ -16,7 +15,7 @@
 <p align="center"> • Save and using export presets
 <p align="center"> • Drag & drop fonts into software
  
-# <p align="center">Images
+# <p align="center">Screenshots
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/49194161/159110826-8745d931-64b9-4589-86ea-f3efb3e37633.png"/>
