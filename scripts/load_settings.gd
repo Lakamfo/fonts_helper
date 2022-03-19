@@ -1,7 +1,7 @@
 extends ColorRect
 
-export (String) var settings_path = OS.get_executable_path().get_base_dir() + "/settings.txt"
-export (String) var localisation_path = OS.get_executable_path().get_base_dir() + "/assets/localisation/"
+export (String) var settings_path = "/settings.txt"
+export (String) var localisation_path = "/assets/localisation/"
 
 var _load_preset = true
 var localisation_buffer = {}
@@ -13,17 +13,21 @@ var _file_preset = File.new()
 signal load_preset
 
 func _ready() -> void:
-	yield(get_parent(),"ready")
 	if get_parent().debug or get_parent().force_debug:
-		settings_path = "res://settings.txt"
-		localisation_path = "res://assets/localisation/"
+		settings_path = "res://debug_files/settings.txt"
+		localisation_path = "res://debug_files/localisation/"
+	else:
+		localisation_path = OS.get_executable_path().get_base_dir() + localisation_path
+		settings_path = OS.get_executable_path().get_base_dir() + settings_path
+	
+	yield(get_parent(),"ready")
 	
 	_file_settings.open(settings_path,File.READ)
 	print(settings_path)
 	var _text = _file_settings.get_as_text()
 	var settings_json = parse_json(_text)
 	settings_buffer = settings_json
-	
+	locale = settings_buffer.language
 	_file_settings.close()
 	
 	_load_preset = settings_buffer.load_preset
@@ -39,7 +43,7 @@ func _ready() -> void:
 func load_locale(_locale: String):
 	var _file = File.new()
 	
-	_load_preset = settings_buffer.load_preset
+	
 	_file.open(localisation_path + _locale + ".txt",File.READ)
 	print(localisation_path + _locale + ".txt")
 	

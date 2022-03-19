@@ -1,0 +1,12 @@
+{
+	"reload":"Reload",
+	"export":"Export",
+	"dragNdrop":"You can drop files there",
+	"select_folder":"Select export folder",
+	"add_font":"Select font",
+	"or_l":"OR",
+	"open_settings_tip":"Press F2 to open settings",
+	"load_preset":"Load preset",
+	"save_as_preset":"Save as preset",
+	"restore_preset":"Restore preset"
+}

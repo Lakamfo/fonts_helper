@@ -1,96 +1,19 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/magic.gd" type="Script" id=1]
+[ext_resource path="res://scripts/main_script.gd" type="Script" id=1]
 [ext_resource path="res://example_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scripts/load_settings.gd" type="Script" id=3]
-[ext_resource path="res://assets/default_fonts/Inconsolata-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scroll.tres" type="Theme" id=5]
-[ext_resource path="res://other/tut.png" type="Texture" id=6]
-[ext_resource path="res://other/boot_image.png" type="Texture" id=7]
-[ext_resource path="res://shaders/blur_shader.tres" type="Material" id=8]
+[ext_resource path="res://app_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://custom_theme.tres" type="Theme" id=5]
+[ext_resource path="res://images/boot_image.png" type="Texture" id=7]
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0.188235, 0.172549, 0.172549, 1 )
-border_color = Color( 0, 1, 0.94902, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=15]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 1, 0.933333, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 1, 0.941176, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 4
-
-[sub_resource type="StyleBoxFlat" id=14]
-bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 1, 0.996078, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.223529, 0.223529, 0.223529, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.137255, 0.137255, 0.137255, 1 )
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.0823529, 0.0901961, 0.101961, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -102,23 +25,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0.188235, 0.172549, 0.172549, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0, 1, 0.94902, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="DynamicFont" id=8]
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=16]
 length = 0.001
@@ -200,11 +106,7 @@ margin_bottom = 43.0
 grow_horizontal = 0
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "Add font"
 
@@ -217,11 +119,7 @@ margin_right = 121.5
 margin_bottom = 43.0
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 
 [node name="example_color" type="ColorRect" parent="bg"]
@@ -239,11 +137,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -341.0
-margin_top = -28.5
-margin_bottom = 28.5
+margin_left = -309.0
+margin_top = -28.0
+margin_right = 32.0
+margin_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
+rect_scale = Vector2( 0.9, 0.9 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 0
@@ -259,11 +159,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = -28.5
-margin_right = 341.0
-margin_bottom = 28.5
-grow_horizontal = 2
+margin_top = -28.0
+margin_right = 372.0
+margin_bottom = 35.0
 grow_vertical = 2
+rect_scale = Vector2( 0.9, 0.9 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 0
@@ -283,6 +183,7 @@ margin_right = 136.0
 margin_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource( 5 )
 text = "You can drop files there"
 align = 1
 valign = 1
@@ -296,6 +197,7 @@ margin_right = 92.0
 margin_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource( 5 )
 text = "OR"
 align = 1
 valign = 1
@@ -313,11 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 464.5, 83 )
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "Export"
 
@@ -332,11 +230,7 @@ grow_horizontal = 0
 grow_vertical = 2
 rect_pivot_offset = Vector2( 464.5, 83 )
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "Reload"
 
@@ -353,46 +247,42 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 464.5, 83 )
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "Select export folder"
 
 [node name="rename_box" type="ScrollContainer" parent="."]
-material = ExtResource( 8 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -223.0
-margin_top = -44.0
-margin_right = 224.0
-margin_bottom = 132.0
+margin_left = -230.0
+margin_top = -48.0
+margin_right = 230.0
+margin_bottom = 128.0
 theme = ExtResource( 5 )
-custom_styles/bg = SubResource( 1 )
+custom_styles/bg = SubResource( 18 )
 follow_focus = true
+scroll_horizontal_enabled = false
 
 [node name="v_container" type="VBoxContainer" parent="rename_box"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 1.0
 custom_constants/separation = 8
 
-[node name="add_dublicate" type="Button" parent="."]
+[node name="add_duplicate" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 225.0
-margin_top = -44.0
-margin_right = 252.0
+margin_left = 233.0
+margin_top = -48.0
+margin_right = 263.0
 margin_bottom = -18.0
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
+theme = ExtResource( 5 )
 enabled_focus_mode = 0
 text = "+"
 
@@ -405,6 +295,7 @@ margin_left = -232.5
 margin_top = -126.0
 margin_right = 232.5
 margin_bottom = 126.0
+theme = ExtResource( 5 )
 window_title = "Открыть файл"
 resizable = true
 mode = 0
@@ -422,6 +313,7 @@ margin_left = -232.5
 margin_top = -126.0
 margin_right = 232.5
 margin_bottom = 126.0
+theme = ExtResource( 5 )
 window_title = "Открыть каталог"
 resizable = true
 mode = 2
@@ -440,8 +332,7 @@ margin_left = -74.5
 margin_top = -29.0
 margin_right = 74.5
 margin_bottom = -9.0
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
+theme = ExtResource( 5 )
 max_value = 7.0
 
 [node name="settings_menu" type="PopupMenu" parent="."]
@@ -453,7 +344,7 @@ margin_left = -127.5
 margin_top = -81.5
 margin_right = 127.5
 margin_bottom = 81.5
-custom_styles/panel = SubResource( 7 )
+theme = ExtResource( 5 )
 allow_search = true
 
 [node name="load_preset" type="CheckButton" parent="settings_menu"]
@@ -468,12 +359,7 @@ margin_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 13 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
 custom_styles/hover_pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
 enabled_focus_mode = 0
 text = "Load preset"
 
@@ -489,11 +375,6 @@ margin_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 5 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 5 )
 enabled_focus_mode = 0
 text = "Language"
 align = 1
@@ -510,11 +391,6 @@ margin_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 12 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 text = "Save as preset"
 
@@ -530,40 +406,19 @@ margin_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 11 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
 enabled_focus_mode = 0
 text = "Restore preset"
 
 [node name="open_settings_tip" type="Label" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -20.0
-margin_right = 175.0
-custom_colors/font_color = Color( 1, 1, 1, 0.380392 )
-custom_fonts/font = SubResource( 8 )
+margin_top = -19.0
+margin_right = 178.0
+margin_bottom = 1.0
+rect_scale = Vector2( 0.9, 0.9 )
+custom_colors/font_color = Color( 1, 1, 1, 0.392157 )
+custom_fonts/font = ExtResource( 4 )
 text = "Press F2 to open settings"
-
-[node name="tutor" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="picture" type="TextureRect" parent="tutor"]
-margin_left = 182.0
-margin_top = -151.0
-margin_right = 639.0
-margin_bottom = -6.0
-texture = ExtResource( 6 )
-
-[node name="text" type="Label" parent="tutor"]
-margin_top = -88.0
-margin_right = 171.0
-margin_bottom = -45.0
-text = "Use debug 
-For build uncheck the box"
 
 [node name="fade_anim" type="ColorRect" parent="."]
 visible = false
@@ -589,7 +444,7 @@ expand = true
 [connection signal="pressed" from="bg/export" to="." method="export"]
 [connection signal="pressed" from="bg/reload" to="." method="reload_bt"]
 [connection signal="pressed" from="bg/select_folder" to="." method="folder_select"]
-[connection signal="pressed" from="add_dublicate" to="." method="add_bt"]
+[connection signal="pressed" from="add_duplicate" to="." method="add_bt"]
 [connection signal="file_selected" from="select_font_popup" to="." method="add_font"]
 [connection signal="dir_selected" from="select_export_folder" to="." method="export_folder_selected"]
 [connection signal="popup_hide" from="settings_menu" to="bg" method="_settings_menu_popup_hide"]
