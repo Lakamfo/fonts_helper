@@ -15,10 +15,10 @@ onready var fade_animation = $fade_anim/animation_player
 onready var language_selecter = $settings_menu/language
 
 export (Dictionary) var default_preset = {"1":"arial.ttf","2":"arialbd.ttf","3":"SourceSansPro-Bold.ttf","4":"SourceSansPro-It.ttf","5":"SourceSansPro-Light.ttf","6":"SourceSansPro-Regular.ttf","7":"SourceSansPro-Semibold.ttf"}
-var standart_path = OS.get_executable_path().get_base_dir() + "/assets/default_fonts"
-var preset_path = OS.get_executable_path().get_base_dir() + "/preset.txt"
-var export_fonts_path = OS.get_executable_path().get_base_dir() + "/export"
-var debug = OS.is_debug_build()
+var standart_path : String = OS.get_executable_path().get_base_dir() + "/assets/default_fonts"
+var preset_path : String  = OS.get_executable_path().get_base_dir() + "/preset.txt"
+var export_fonts_path : String  = OS.get_executable_path().get_base_dir() + "/export"
+var debug : Bool = OS.is_debug_build()
 export (bool) var force_debug = false
 
 onready var ui = {
@@ -34,15 +34,15 @@ onready var ui = {
 	"restore_preset":$settings_menu/restore_preset
 	}
 
-var fonts = []
-var added_fonts_names = []
-var languages = []
-var languages_names = []
-var last_dropped_index = 0
-var loaded_fonts = []
+var fonts : Array = []
+var added_fonts_names : Array = []
+var languages : Array = []
+var languages_names : Array = []
+var last_dropped_index : int = 0
+var loaded_fonts : Array = []
 var file = File.new()
-var names = []
-var number = 0
+var names : Array = []
+var number : int = 0
 
 func _ready() -> void:
 	if get_tree().connect("files_dropped", self, "dragNdrop"):
