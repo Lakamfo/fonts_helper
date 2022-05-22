@@ -18,7 +18,7 @@ export (Dictionary) var default_preset = {"1":"arial.ttf","2":"arialbd.ttf","3":
 var standart_path : String = OS.get_executable_path().get_base_dir() + "/assets/default_fonts"
 var preset_path : String  = OS.get_executable_path().get_base_dir() + "/preset.txt"
 var export_fonts_path : String  = OS.get_executable_path().get_base_dir() + "/export"
-var debug : Bool = OS.is_debug_build()
+var debug : bool = OS.is_debug_build()
 export (bool) var force_debug = false
 
 onready var ui = {
